@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
   :root{
-    --ground:#FBFCFD; --wash:#F7F3EC; --ink:#182028; --ink-2:#45525E; --ink-3:#6E7B87;
+    --ground:#FBFCFD; --wash:#F7F3EC; --ink:#182028; --ink-2:#45525E; --ink-3:#5E6B77;
     --line:#D5DBE1; --line-soft:#E3E8EC; --copper:#A9611F; --copper-dark:#8F4F14;
     --green:#4A5741; --dark:#182028;
   }
@@ -87,7 +87,34 @@
   footer{border-top:1px solid var(--line-soft);padding:26px 0}
   .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
 
-  @media (max-width:720px){.navlinks{display:none}.step{flex-direction:column;gap:8px}}
+  /* Copper text sitting on the wash ground needs the darker copper (A9611F on wash = 4.30:1, fails AA) */
+  .hero .eyebrow,.story .eyebrow,.cta a:not(.btn),.story a:not(.btn){color:var(--copper-dark)}
+
+  @media (max-width:720px){
+    /* No hamburger: collapse the text links but keep the copper CTA reachable. */
+    .navlinks{display:flex;gap:0}
+    .navlinks a:not(.btn){display:none}
+    .nav{padding:14px 24px;gap:12px}
+    .navlinks .btn{padding:10px 16px;font-size:14px}
+    .step{flex-direction:column;gap:8px}
+  }
+
+  @media print{
+    /* Chrome disables background graphics by default: repaint dark sections as dark-on-white
+       so the strongest copy on the page survives a print or PDF export. */
+    header,.navlinks,.btn-ghost{display:none !important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .btn{background:none !important;color:var(--copper-dark) !important;border:1pt solid #999;padding:6pt 10pt}
+    .dark{background:#fff !important;color:var(--ink) !important;padding:24pt 0;border-top:1pt solid #999;border-bottom:1pt solid #999}
+    .dark .eyebrow,.dark .mono{color:var(--copper-dark) !important}
+    .dark h2,.dark strong,.dark p,.dark div{color:var(--ink) !important}
+    .dark [style*="background"]{background:#fff !important}
+    .dark [style*="border"]{border-color:#999 !important}
+    .hero,.story,.cta{background:#fff !important}
+    .stat,.card,.step,.fact,.roadmap,figure,.pe-note{break-inside:avoid;page-break-inside:avoid}
+    section.block,.dark,.story{break-inside:auto}
+    .cta .btn:after{content:" — hello@toptierltv.com";font-size:9pt}
+  }
 </style>
 </head>
 <body>
@@ -125,12 +152,12 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="num"><em>2.2M+</em></div><div class="cap">construction permits analyzed — real jobs, real dates, every trade, refreshed monthly</div></div>
-      <div class="stat"><div class="num">91%</div><div class="cap">of permits are replacements &amp; alterations — your revenue is a replacement cycle we can map</div></div>
+      <div class="stat"><div class="num"><em>4.29M</em></div><div class="cap">construction permit records analyzed across 11 markets (4,294,918 rows) — real jobs, real dates, real addresses</div></div>
+      <div class="stat"><div class="num">91%</div><div class="cap">of <strong>New Jersey</strong> permits are alterations, not new construction (Bergen County, 2021&ndash;2025) — your revenue is a replacement cycle we can map</div></div>
       <div class="stat"><div class="num"><em>house by house</em></div><div class="cap">equipment age from the public record — who's entering the replacement window now</div></div>
       <div class="stat"><div class="num">holdout-measured</div><div class="cap">every engagement produces a before/after number, not a story</div></div>
     </div>
-    <div class="src">Source: TopTier LTV analysis of public state &amp; municipal construction-permit records (retrieved Sep 2026). Full sourcing appears in every report.</div>
+    <div class="src">Source: TopTier LTV analysis of public state &amp; municipal construction-permit records across 11 markets (retrieved Sep 2026; a point-in-time snapshot, not a live feed). The 91% alteration share is a New Jersey figure and is not computed for the other markets. Full sourcing appears in every report.</div>
   </div>
 </section>
 
@@ -157,14 +184,14 @@
         <div class="n">03</div>
         <div>
           <h3>The 90-day LTV pilot <span class="tag">Fixed fee &middot; holdout-measured</span></h3>
-          <p>A scheduled data export from your field-service software — that's the whole lift on your side. We score every household across your brands on lifetime value and membership propensity, hand your CSRs and marketing ranked action lists, and measure membership adds against a holdout group. You end the 90 days with a number, not a slide.</p>
+          <p>A scheduled data export from your field-service software — that's the whole lift on your side. We score every household across your brands on one thing: <strong>lifetime value</strong>. Then we run the plays that score implies — membership conversion, cross-brand introductions, replacement-window timing, reactivation — as ranked action lists for your CSRs and marketing, measured against a holdout group. You end the 90 days with a number, not a slide.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">04</div>
         <div>
           <h3>The intelligence layer <span class="tag">Ongoing</span></h3>
-          <p>Replacement-window alerts as households age into their next system. Competitor share in your home zips, quarter over quarter. Outside-in screens on acquisition targets before they get a data room. The market and your book, one view — compounding every quarter you run it.</p>
+          <p>Replacement-window alerts as households age into their next system. Competitor share by municipality, quarter over quarter, <em>where the city publishes contractor names on the permit</em> — Chicago, Philadelphia and New York City today; in New Jersey that field isn't in the state feed and takes a municipal records request. Outside-in screens on acquisition targets before they get a data room. The market and your book, one view — compounding every quarter you run it.</p>
         </div>
       </div>
     </div>
@@ -177,7 +204,7 @@
     <h2 style="max-width:760px">The industry spent its AI money on operations. Your company is valued on the book.</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:34px 0 26px">
       <div style="border:1px solid #313B44;border-radius:8px;padding:26px 28px;background:rgba(255,255,255,0.03)">
-        <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7E8B96;margin-bottom:14px">Where the money went</div>
+        <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8C99A4;margin-bottom:14px">Where the money went</div>
         <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#E8ECEF;margin-bottom:12px">Running the trucks</div>
         <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Hundreds of millions in AI funding went to answering phones, booking calls, and routing technicians. Genuinely useful — and it all makes the <em>same jobs cheaper to run</em>. It doesn't create the next job.</p>
       </div>
@@ -187,7 +214,13 @@
         <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Your valuation is priced on membership mix, recurring revenue, and household lifetime value — and <em>nothing</em> in that funded stack tells you which households to retain, upsell, and re-market across your brands. That's the seat we take.</p>
       </div>
     </div>
-    <p style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:#E8ECEF;max-width:720px">Efficiency tools make every truck roll cheaper. We make every household worth more &mdash; equipment age and replacement timing from the public record, joined to your own customer history, measured against a holdout.</p>
+    <p style="margin:0 0 34px;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:#E8ECEF;max-width:720px">Efficiency tools make every truck roll cheaper. We make every household worth more &mdash; equipment age and replacement timing from the public record, joined to your own customer history, measured against a holdout.</p>
+
+    <div class="pe-note" style="border-top:1px solid #313B44;padding-top:26px;max-width:760px">
+      <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#D08A3E;margin-bottom:12px">If you're the sponsor</div>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">A home-services platform is typically bought around <strong>12% EBITDA</strong> and underwritten to something like <strong>18%</strong> &mdash; by pushing utilization and job mix on the book you already own. Those two moves don't just raise the margin; recurring mix also reprices the multiple that margin is valued at. <strong>Margin expansion and multiple expansion compound</strong>, and every lever in that chain runs through knowing which households are worth what.</p>
+      <p style="margin:12px 0 0;font-size:13.5px;line-height:1.55;color:#8E9AA4">Those EBITDA bands are typical industry ranges, not measurements of your business or ours.</p>
+    </div>
   </div>
 </section>
 

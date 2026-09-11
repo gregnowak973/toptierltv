@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
   :root{
-    --ground:#FBFCFD; --wash:#F7F3EC; --ink:#182028; --ink-2:#45525E; --ink-3:#6E7B87;
+    --ground:#FBFCFD; --wash:#F7F3EC; --ink:#182028; --ink-2:#45525E; --ink-3:#5E6B77;
     --line:#D5DBE1; --line-soft:#E3E8EC; --copper:#A9611F; --copper-dark:#8F4F14;
     --green:#4A5741; --dark:#182028;
   }
@@ -61,7 +61,30 @@
   .cta p{color:var(--ink-2);max-width:560px;margin:0 auto 24px}
   footer{border-top:1px solid var(--line-soft);padding:26px 0}
   .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
-  @media (max-width:720px){.navlinks{display:none}}
+  /* Copper text sitting on the wash ground needs the darker copper (A9611F on wash = 4.30:1, fails AA) */
+  .hero .eyebrow,.cta a:not(.btn){color:var(--copper-dark)}
+
+  @media (max-width:720px){
+    /* No hamburger: collapse the text links but keep the copper CTA reachable. */
+    .navlinks{display:flex;gap:0}
+    .navlinks a:not(.btn){display:none}
+    .nav{padding:14px 24px;gap:12px}
+    .navlinks .btn{padding:10px 16px;font-size:14px}
+  }
+
+  @media print{
+    /* Chrome disables background graphics by default: repaint the dark block as dark-on-white
+       so it survives a print or PDF export. */
+    header,.navlinks{display:none !important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .btn{background:none !important;color:var(--copper-dark) !important;border:1pt solid #999;padding:6pt 10pt}
+    .dark{background:#fff !important;color:var(--ink) !important;padding:24pt 0;border-top:1pt solid #999;border-bottom:1pt solid #999}
+    .dark .eyebrow{color:var(--copper-dark) !important}
+    .dark h2,.dark p,.dark strong{color:var(--ink) !important}
+    .hero,.cta{background:#fff !important}
+    .stat,.card,figure{break-inside:avoid;page-break-inside:avoid}
+    .cta .btn:after{content:" — hello@toptierltv.com";font-size:9pt}
+  }
 </style>
 </head>
 <body>
@@ -83,7 +106,7 @@
       <a href="../#roadmap">How it works</a>
       <a href="./" class="active">Territory reports</a>
       <a href="../#story">Our mark</a>
-      <a href="mailto:hello@toptierltv.com" class="btn">Request your territory</a>
+      <a href="mailto:hello@toptierltv.com?subject=Territory%20report%20request" class="btn">Request your territory</a>
     </nav>
   </div>
 </header>
@@ -92,17 +115,17 @@
   <div class="wrap">
     <div class="eyebrow">For home-services platforms &amp; operators</div>
     <h1>See your territory the way no ops team has seen it.</h1>
-    <p class="sub">Outside-in market intelligence built from public permit records — every municipality, every trade, refreshed monthly. No data from you required to start.</p>
+    <p class="sub">Outside-in market intelligence built from public permit records — most New Jersey municipalities, every trade that appears on the permit, with reporting gaps detected and excluded. No data from you required to start.</p>
     <a class="btn" href="mailto:hello@toptierltv.com?subject=Territory%20report%20request">Request your territory</a>
 
     <div class="stats">
       <div class="stat"><div class="num"><em>221,487</em></div><div class="cap">construction permits analyzed in our Bergen County, NJ pilot, 2021&ndash;2025</div></div>
-      <div class="stat"><div class="num">70 / 70</div><div class="cap">municipalities covered — the full county, one dataset</div></div>
-      <div class="stat"><div class="num"><em>91%</em></div><div class="cap">of permits are alterations — a replacement economy, not new construction</div></div>
+      <div class="stat"><div class="num">70 / 70</div><div class="cap">Bergen municipalities covered — and 5 flagged for reporting dropouts and excluded from the trend figures. We find the gaps and say so.</div></div>
+      <div class="stat"><div class="num"><em>91%</em></div><div class="cap">of Bergen County permits are alterations, 2021&ndash;2025 — a replacement economy, not new construction</div></div>
       <div class="stat"><div class="num">+17%</div><div class="cap">county permit volume growth, 2021 &rarr; 2025</div></div>
       <div class="stat"><div class="num"><em>+57%</em></div><div class="cap">fastest-growing town (Englewood Cliffs); Allendale +46%, Leonia +44%</div></div>
     </div>
-    <div class="src">Source: TopTier LTV analysis of New Jersey DCA construction-permit records (data.nj.gov, permit-level, all municipalities; retrieved Sep 2026). Municipal reporting gaps detected and excluded from trend figures.</div>
+    <div class="src">Source: TopTier LTV analysis of New Jersey's state-mandated municipal construction-permit reporting (retrieved Sep 2026; a point-in-time snapshot, not a live feed). The state's own caveat is that it collects from <em>most, but not all</em> municipalities — so we test every municipality for submission dropouts and exclude the ones that fail from trend figures. New Jersey is the only state among the 24 we surveyed that publishes permit-level records statewide. Full sourcing appears in every report.</div>
   </div>
 </section>
 
@@ -124,8 +147,8 @@
       <div class="card">
         <div class="k">Competition</div>
         <h3>Contractor share &amp; fastest growers</h3>
-        <p>Which competitors are winning installs in your home zips, and who's growing fastest — tracked quarterly from the public record.</p>
-        <span class="soon">Rolling out by county</span>
+        <p>Where the city publishes contractor names on the permit — Chicago, Philadelphia and New York City today — we track which competitors are winning installs by municipality and who's growing fastest, quarter over quarter. New Jersey's statewide reporting carries no contractor field; getting it for an NJ territory takes a municipal records request.</p>
+        <span class="soon">Where contractor names are public</span>
       </div>
       <div class="card">
         <div class="k">Diligence</div>
@@ -140,7 +163,7 @@
   <div class="wrap">
     <div class="eyebrow">The next step</div>
     <h2>The market view is the start. The household view is the win.</h2>
-    <p>Joined to your FSM export, permit-derived <strong>equipment age at every address</strong> and <strong>neighborhood replacement velocity</strong> become predictive features: which households are about to spend, which are membership-ready, which of your brands should call them first. That's the 90-day pilot — <strong>scored household lists your CSRs can action, measured against a holdout group</strong> so you get a before/after number, not a story.</p>
+    <p>Joined to your FSM export, permit-derived <strong>equipment age at every address</strong> and <strong>neighborhood replacement velocity</strong> become predictive features behind one score: <strong>what each household is worth over its lifetime</strong>. The plays run on top of that score, not inside it — membership conversion, cross-brand introductions, replacement-window timing, reactivation — each one an action you take on a ranked household. That's the 90-day pilot: <strong>scored household lists your CSRs can action, measured against a holdout group</strong>, so you get a before/after number, not a story.</p>
   </div>
 </section>
 
