@@ -115,6 +115,17 @@
     section.block,.dark,.story{break-inside:auto}
     .cta .btn:after{content:" — hello@toptierltv.com";font-size:9pt}
   }
+
+  /* DATAVIZ system (docs/DATAVIZ.md): figures are inline SVG from tools/site_figures.py */
+  .sq{margin:26px auto 0;max-width:760px;font-size:clamp(17px,2.1vw,20px);line-height:1.5;color:var(--ink)}
+  .sq q{font-style:italic;quotes:"“" "”"}
+  .sq b{font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:var(--copper-dark);white-space:nowrap}
+  .figure{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px 16px;max-width:760px;margin:26px auto 0}
+  .figure svg{max-width:680px;margin:0 auto}
+  .cap{font-family:Archivo,sans-serif;font-size:14px;line-height:1.55;color:var(--ink-3);margin:12px 0 0;max-width:68ch}
+  .cap b{color:var(--ink)}
+  .tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);border-radius:100px;padding:3px 7px;margin-left:8px;vertical-align:1px;white-space:nowrap}
+  @media (max-width:720px){.figure{padding:14px 12px 12px;overflow-x:auto}.figure svg{min-width:560px}}
 </style>
 </head>
 <body>
@@ -145,55 +156,61 @@
   <div class="wrap">
     <div class="eyebrow">For home-services operators &amp; their investors</div>
     <h1>Grow the number your business is valued on.</h1>
-    <p class="sub">Membership mix, recurring revenue, household lifetime value — the metrics that price your company. TopTier LTV moves them, measurably, starting with a free map of your market.</p>
+    <p class="sub">Membership mix, recurring revenue, household lifetime value — the numbers your company is priced on. We move them, measurably. Start with a free map of your market.</p>
     <div class="hero-ctas">
       <a class="btn" href="mailto:hello@toptierltv.com?subject=Territory%20report%20request">Request your free territory report</a>
       <a class="btn-ghost" href="territory/">See what's in one</a>
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="num"><em>4.29M</em></div><div class="cap">construction permit records analyzed across 11 markets (4,294,918 rows) — real jobs, real dates, real addresses</div></div>
-      <div class="stat"><div class="num">91%</div><div class="cap">of <strong>New Jersey</strong> permits are alterations, not new construction (Bergen County, 2021&ndash;2025) — your revenue is a replacement cycle we can map</div></div>
-      <div class="stat"><div class="num"><em>house by house</em></div><div class="cap">equipment age from the public record — who's entering the replacement window now</div></div>
-      <div class="stat"><div class="num">holdout-measured</div><div class="cap">every engagement produces a before/after number, not a story</div></div>
+      <div class="stat"><div class="num"><em>4.29M</em></div><div class="cap">permit records analyzed across 11 markets — real jobs, real dates, real properties</div></div>
+      <div class="stat"><div class="num">91%</div><div class="cap">of <strong>New Jersey</strong> permits are alterations, not new builds (Bergen County, 2021&ndash;2025) — a replacement cycle we can map</div></div>
+      <div class="stat"><div class="num"><em>house by house</em></div><div class="cap">equipment age from the public record — who is entering the replacement window now</div></div>
+      <div class="stat"><div class="num">holdout-measured</div><div class="cap">every engagement ends in a number, not a story</div></div>
     </div>
     <div class="src">Source: TopTier LTV analysis of public state &amp; municipal construction-permit records across 11 markets (retrieved Sep 2026; a point-in-time snapshot, not a live feed). The 91% alteration share is a New Jersey figure and is not computed for the other markets. Full sourcing appears in every report.</div>
+    <p class="sq"><q>Which 20% of households should the platform retain, upsell into memberships, and re-market to?</q> is a <b>sponsor question.</b></p>
   </div>
 </section>
 
 <section class="block" id="roadmap">
   <div class="wrap">
     <h2>The roadmap</h2>
-    <p class="lede">Four steps, each one earning the next. No integration project, no long contract — the work proves itself at every stage.</p>
+    <p class="lede">Four steps, each one earning the next. No integration project, no long contract.</p>
     <div class="roadmap">
       <div class="step">
         <div class="n">01</div>
         <div>
           <h3>Your territory, mapped <span class="tag">Free</span></h3>
-          <p>A report on your market built entirely from public records: permit velocity by trade, replacement activity against housing age, who's growing where. Built before you share a single row of your own data — because the market view shouldn't cost you anything.</p>
+          <p>Your market from public records: permit velocity by trade, replacement activity against housing age, who is growing where. Built before you share a single row of your own data.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">02</div>
         <div>
           <h3>The walkthrough <span class="tag">20 minutes</span></h3>
-          <p>We walk your team through what we see in your territory — and exactly what it looks like when the same analysis runs on your own customer base instead of the public record.</p>
+          <p>What we see in your territory — and what the same analysis looks like on your own customer base.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">03</div>
         <div>
           <h3>The 90-day LTV pilot <span class="tag">Fixed fee &middot; holdout-measured</span></h3>
-          <p>A scheduled data export from your field-service software — that's the whole lift on your side. We score every household across your brands on one thing: <strong>lifetime value</strong>. Then we run the plays that score implies — membership conversion, cross-brand introductions, replacement-window timing, reactivation — as ranked action lists for your CSRs and marketing, measured against a holdout group. You end the 90 days with a number, not a slide.</p>
+          <p>One scheduled export from your field-service software is the whole lift on your side. We score every household across your brands on <strong>lifetime value</strong>, then run the plays the score implies — membership conversion, cross-brand introductions, replacement timing, reactivation — as ranked lists for your CSRs, measured against a holdout. Day 90 ends with a number, not a slide.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">04</div>
         <div>
           <h3>The intelligence layer <span class="tag">Ongoing</span></h3>
-          <p>Replacement-window alerts as households age into their next system. Competitor share by municipality, quarter over quarter, <em>where the city publishes contractor names on the permit</em> — Chicago, Philadelphia and New York City today; in New Jersey that field isn't in the state feed and takes a municipal records request. Outside-in screens on acquisition targets before they get a data room. The market and your book, one view — compounding every quarter you run it.</p>
+          <p>Replacement-window alerts as households age into their next system. Competitor share by municipality, quarter over quarter, <em>where the city publishes contractor names</em> (Chicago, Philadelphia, New York City today; New Jersey takes a records request). Outside-in screens on acquisition targets before the data room. The market and your book, one view, compounding every quarter.</p>
         </div>
       </div>
+    </div>
+    <p class="sq" style="margin-top:44px"><q>Who is taking share in our territory, quarter over quarter?</q> is a <b>board question.</b></p>
+    <div class="figure">
+      <!-- fig:velocity --><svg viewBox="0 0 680 220" style="width:100%;display:block" role="img"><line x1="62" x2="658" y1="180.0" y2="180.0" stroke="var(--line)"/><rect x="66.0" y="71.3" width="104.0" height="108.7" rx="3" fill="var(--copper)" opacity="0.85"/><text x="118" y="65" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family='"IBM Plex Mono",monospace'>106,810</text><text x="118" y="210" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family='Archivo,sans-serif'>2021</text><rect x="184.0" y="30.0" width="104.0" height="150.0" rx="3" fill="var(--copper)" opacity="0.85"/><text x="236" y="24" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family='"IBM Plex Mono",monospace'>147,399</text><text x="236" y="210" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family='Archivo,sans-serif'>2022</text><rect x="302.0" y="49.1" width="104.0" height="130.9" rx="3" fill="var(--copper)" opacity="0.85"/><text x="354" y="43" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family='"IBM Plex Mono",monospace'>128,663</text><text x="354" y="210" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family='Archivo,sans-serif'>2023</text><rect x="420.0" y="60.0" width="104.0" height="120.0" rx="3" fill="var(--copper)" opacity="0.85"/><text x="472" y="54" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family='"IBM Plex Mono",monospace'>117,966</text><text x="472" y="210" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family='Archivo,sans-serif'>2024</text><rect x="538.0" y="63.7" width="104.0" height="116.3" rx="3" fill="var(--copper)" opacity="0.85"/><text x="590" y="58" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family='"IBM Plex Mono",monospace'>114,246</text><text x="590" y="210" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family='Archivo,sans-serif'>2025</text></svg><!-- /fig:velocity -->
+      <p class="cap"><b>Permits filed per year across five North Jersey counties, 158 municipalities.</b> 2022 was the post-COVID surge; the market has settled 7% above 2021 and every year of it is a dated property event we can map. From the public record, before you send a row.<span class="tag">measured</span></p>
     </div>
   </div>
 </section>
@@ -206,19 +223,20 @@
       <div style="border:1px solid #313B44;border-radius:8px;padding:26px 28px;background:rgba(255,255,255,0.03)">
         <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8C99A4;margin-bottom:14px">Where the money went</div>
         <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#E8ECEF;margin-bottom:12px">Running the trucks</div>
-        <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Hundreds of millions in AI funding went to answering phones, booking calls, and routing technicians. Genuinely useful — and it all makes the <em>same jobs cheaper to run</em>. It doesn't create the next job.</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Hundreds of millions in AI funding went to phones, booking and dispatch. Useful — and it makes the <em>same jobs cheaper to run</em>. It doesn't create the next one.</p>
       </div>
       <div style="border:1px solid #D08A3E;border-radius:8px;padding:26px 28px;background:rgba(208,138,62,0.08)">
         <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#D08A3E;margin-bottom:14px">Where the value is priced</div>
         <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#E8ECEF;margin-bottom:12px">Growing the book</div>
-        <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Your valuation is priced on membership mix, recurring revenue, and household lifetime value — and <em>nothing</em> in that funded stack tells you which households to retain, upsell, and re-market across your brands. That's the seat we take.</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">Your valuation is priced on membership mix, recurring revenue and household lifetime value — and <em>nothing</em> in that stack says which households to retain, upsell and re-market across your brands. That's the seat we take.</p>
       </div>
     </div>
-    <p style="margin:0 0 34px;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:#E8ECEF;max-width:720px">Efficiency tools make every truck roll cheaper. We make every household worth more &mdash; equipment age and replacement timing from the public record, joined to your own customer history, measured against a holdout.</p>
+    <p style="margin:0 0 34px;font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:#E8ECEF;max-width:720px">Efficiency tools make every truck roll cheaper. We make every household worth more.</p>
 
     <div class="pe-note" style="border-top:1px solid #313B44;padding-top:26px;max-width:760px">
       <div class="mono" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#D08A3E;margin-bottom:12px">If you're the sponsor</div>
-      <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">A home-services platform is typically bought around <strong>12% EBITDA</strong> and underwritten to something like <strong>18%</strong> &mdash; by pushing utilization and job mix on the book you already own. Those two moves don't just raise the margin; recurring mix also reprices the multiple that margin is valued at. <strong>Margin expansion and multiple expansion compound</strong>, and every lever in that chain runs through knowing which households are worth what.</p>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#AEB9C2">A platform is bought around <strong>12% EBITDA</strong> and underwritten to something like <strong>18%</strong> by pushing utilization and job mix on the book it already owns. Recurring mix also reprices the multiple. <strong>Margin expansion and multiple expansion compound</strong>, and every lever in that chain runs through knowing which households are worth what.</p>
+      <p class="sq" style="margin:22px 0 0;color:#E8ECEF;max-width:none"><q>Did the marketing dollar work, or did the season?</q> is a <b style="color:#D08A3E">holdout question.</b></p>
       <p style="margin:12px 0 0;font-size:13.5px;line-height:1.55;color:#8E9AA4">Those EBITDA bands are typical industry ranges, not measurements of your business or ours.</p>
     </div>
   </div>

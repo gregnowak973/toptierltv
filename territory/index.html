@@ -85,6 +85,17 @@
     .stat,.card,figure{break-inside:avoid;page-break-inside:avoid}
     .cta .btn:after{content:" — hello@toptierltv.com";font-size:9pt}
   }
+
+  /* DATAVIZ system (docs/DATAVIZ.md): figures are inline SVG from tools/site_figures.py */
+  .sq{margin:26px auto 0;max-width:760px;font-size:clamp(17px,2.1vw,20px);line-height:1.5;color:var(--ink)}
+  .sq q{font-style:italic;quotes:"“" "”"}
+  .sq b{font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:var(--copper-dark);white-space:nowrap}
+  .figure{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px 16px;max-width:760px;margin:26px auto 0}
+  .figure svg{max-width:680px;margin:0 auto}
+  .cap{font-family:Archivo,sans-serif;font-size:14px;line-height:1.55;color:var(--ink-3);margin:12px 0 0;max-width:68ch}
+  .cap b{color:var(--ink)}
+  .tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);border-radius:100px;padding:3px 7px;margin-left:8px;vertical-align:1px;white-space:nowrap}
+  @media (max-width:720px){.figure{padding:14px 12px 12px;overflow-x:auto}.figure svg{min-width:560px}}
 </style>
 </head>
 <body>
@@ -115,13 +126,13 @@
   <div class="wrap">
     <div class="eyebrow">For home-services platforms &amp; operators</div>
     <h1>See your territory the way no ops team has seen it.</h1>
-    <p class="sub">Outside-in market intelligence built from public permit records — most New Jersey municipalities, every trade that appears on the permit, with reporting gaps detected and excluded. No data from you required to start.</p>
+    <p class="sub">Market intelligence from public permit records — most New Jersey municipalities, every trade on the permit, reporting gaps detected and excluded. No data from you to start.</p>
     <a class="btn" href="mailto:hello@toptierltv.com?subject=Territory%20report%20request">Request your territory</a>
 
     <div class="stats">
       <div class="stat"><div class="num"><em>221,487</em></div><div class="cap">construction permits analyzed in our Bergen County, NJ pilot, 2021&ndash;2025</div></div>
-      <div class="stat"><div class="num">70 / 70</div><div class="cap">Bergen municipalities covered — and 5 flagged for reporting dropouts and excluded from the trend figures. We find the gaps and say so.</div></div>
-      <div class="stat"><div class="num"><em>91%</em></div><div class="cap">of Bergen County permits are alterations, 2021&ndash;2025 — a replacement economy, not new construction</div></div>
+      <div class="stat"><div class="num">70 / 70</div><div class="cap">Bergen municipalities covered; 5 flagged as reporting dropouts and excluded from trends. We find the gaps and say so.</div></div>
+      <div class="stat"><div class="num"><em>91%</em></div><div class="cap">of Bergen County permits are alterations, 2021&ndash;2025 — a replacement economy</div></div>
       <div class="stat"><div class="num">+17%</div><div class="cap">county permit volume growth, 2021 &rarr; 2025</div></div>
       <div class="stat"><div class="num"><em>+57%</em></div><div class="cap">fastest-growing town (Englewood Cliffs); Allendale +46%, Leonia +44%</div></div>
     </div>
@@ -132,29 +143,34 @@
 <section class="block">
   <div class="wrap">
     <h2>What's in a Territory Report</h2>
-    <p class="lede">One report per metro or county. Built entirely from public records — which means we can show you your market before you share a single row of your own data.</p>
+    <p class="lede">One report per metro or county, built entirely from public records — your market before you share a single row of your own data.</p>
+    <p class="sq" style="margin:0 0 30px"><q>Which add-on target's permit trend contradicts its CIM?</q> is a <b>diligence question.</b></p>
     <div class="cards">
       <div class="card">
         <div class="k">Market map</div>
         <h3>Who's pulling permits, where</h3>
-        <p>Permit velocity by trade and municipality, install-vs-service mix, and how activity is shifting quarter over quarter — the view your ops team currently assembles from anecdote.</p>
+        <p>Permit velocity by trade and municipality, and how it shifts quarter over quarter — the view your ops team assembles from anecdote today.</p>
       </div>
       <div class="card">
         <div class="k">Demand</div>
         <h3>Replacement-cycle heat map</h3>
-        <p>Permits are property events: a furnace permitted in 2011 is entering its replacement window now. We map replacement velocity against housing age, parcel by parcel.</p>
+        <p>A furnace permitted in 2011 is entering its replacement window now. Replacement velocity against housing age, parcel by parcel.</p>
       </div>
       <div class="card">
         <div class="k">Competition</div>
         <h3>Contractor share &amp; fastest growers</h3>
-        <p>Where the city publishes contractor names on the permit — Chicago, Philadelphia and New York City today — we track which competitors are winning installs by municipality and who's growing fastest, quarter over quarter. New Jersey's statewide reporting carries no contractor field; getting it for an NJ territory takes a municipal records request.</p>
+        <p>Where the city publishes contractor names — Chicago, Philadelphia and New York City today — who is winning installs by municipality, quarter over quarter. New Jersey's feed carries no contractor field; an NJ territory takes a records request.</p>
         <span class="soon">Where contractor names are public</span>
       </div>
       <div class="card">
         <div class="k">Diligence</div>
         <h3>Outside-in target screens</h3>
-        <p>Evaluating an add-on? Permit history answers what the CIM won't: activity trend, geographic concentration, trade mix. A screen that flags which targets deserve a data room.</p>
+        <p>Permit history answers what the CIM won't: activity trend, geographic concentration, trade mix. A screen for which targets deserve a data room.</p>
       </div>
+    </div>
+    <div class="figure">
+      <!-- fig:growers --><svg viewBox="0 0 680 300" style="width:100%;display:block" role="img"><rect x="220" y="22" width="384.0" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="37" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>East Hanover (Morris)</text><text x="612" y="37" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>66%</text><rect x="220" y="54" width="337.5" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="69" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Wharton (Morris)</text><text x="565" y="69" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>58%</text><rect x="220" y="86" width="331.6" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="101" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Englewood Cliffs (Bergen)</text><text x="560" y="101" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>57%</text><rect x="220" y="118" width="314.2" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="133" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Washington Twp (Morris)</text><text x="542" y="133" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>54%</text><rect x="220" y="150" width="296.7" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="165" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Glen Ridge (Essex)</text><text x="525" y="165" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>51%</text><rect x="220" y="182" width="285.1" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="197" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Hanover (Morris)</text><text x="513" y="197" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>49%</text><rect x="220" y="214" width="267.6" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="229" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Chatham Twp (Morris)</text><text x="496" y="229" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>46%</text><rect x="220" y="246" width="267.6" height="21" rx="4" fill="var(--copper)" opacity="0.8"/><text x="210" y="261" text-anchor="end" font-size="11.5" fill="var(--ink)" font-family='Archivo,sans-serif'>Allendale (Bergen)</text><text x="496" y="261" text-anchor="start" font-size="11" fill="var(--copper)" font-weight="700" font-family='"IBM Plex Mono",monospace'>46%</text></svg><!-- /fig:growers -->
+      <p class="cap"><b>Fastest-growing municipalities in North Jersey</b>, average annual permits 2024&ndash;25 against 2021&ndash;22, among towns with 1,000+ permits and no reporting gaps. Growth is town by town, not county by county — and it is where a territory's next trucks belong.<span class="tag">measured</span></p>
     </div>
   </div>
 </section>
@@ -163,7 +179,8 @@
   <div class="wrap">
     <div class="eyebrow">The next step</div>
     <h2>The market view is the start. The household view is the win.</h2>
-    <p>Joined to your FSM export, permit-derived <strong>equipment age at every address</strong> and <strong>neighborhood replacement velocity</strong> become predictive features behind one score: <strong>what each household is worth over its lifetime</strong>. The plays run on top of that score, not inside it — membership conversion, cross-brand introductions, replacement-window timing, reactivation — each one an action you take on a ranked household. That's the 90-day pilot: <strong>scored household lists your CSRs can action, measured against a holdout group</strong>, so you get a before/after number, not a story.</p>
+    <p>Joined to your FSM export, permit-derived <strong>equipment age at every address</strong> and <strong>neighborhood replacement velocity</strong> become features behind one score: <strong>what each household is worth over its lifetime</strong>. The plays run on top of that score, not inside it. That is the 90-day pilot: <strong>ranked household lists your CSRs can action, measured against a holdout</strong>.</p>
+    <p class="sq" style="margin:22px 0 0;color:#E8ECEF;max-width:none"><q>Which 20% of households should the platform retain, upsell into memberships, and re-market to?</q> is a <b style="color:#D08A3E">sponsor question.</b></p>
   </div>
 </section>
 
